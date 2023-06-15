@@ -1,10 +1,5 @@
- *     Pact of Demons    *
- *************************
+PACT OF DEMONS
 
-***************************
-*                         *
-*    By downloading this, * 
-*    you agree to sell    * 
-*    your soul to me      *
-*                         *
-***************************
+IF YOU DOWNLOAD THIS , 
+YOU AGREE TO SELL YOUR
+     SOUL TO ME.
