@@ -36,15 +36,15 @@ namespace NovaSkillTree
             }
         }
 
-        public void DisableUpgradeUI()
-        {
+       void DisableUpgradeUI()
+       {
             for (int i = 0; i < Upgrades.Count; i++)
             {
                 Upgrades[i].SetActive(false);
             }
-        }
+       }
 
-        void SetBorderColor(SkillType type)
+        public void SetBorderColor(SkillType type)
         {
             switch(type)
             {
