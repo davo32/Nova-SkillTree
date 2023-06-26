@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2ec76e41aa9114ebcdeb140b9e7470, type: 3}
+  m_Name: TestSkill03
+  m_EditorClassIdentifier: 
+  Skill_Name: Headhunters Blow
+  Icon: {fileID: 21300000, guid: 110e14c2d23805f4cbee7472b57b7cf4, type: 3}
+  skillType: 1
+  UpgradesAllowed: 3
+  pointsToUnlock: 8

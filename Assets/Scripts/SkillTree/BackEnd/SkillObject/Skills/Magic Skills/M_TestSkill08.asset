@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2ec76e41aa9114ebcdeb140b9e7470, type: 3}
+  m_Name: M_TestSkill08
+  m_EditorClassIdentifier: 
+  Skill_Name: Lightning Bolt
+  Icon: {fileID: 21300000, guid: 3f247912960a9a8458e88bed2f63b599, type: 3}
+  skillType: 4
+  UpgradesAllowed: 3
+  pointsToUnlock: 30

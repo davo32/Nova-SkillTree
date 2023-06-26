@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Android.Types;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
@@ -10,18 +11,59 @@ namespace NovaSkillTree
     public class SkillUI : MonoBehaviour
     {
         [Header("Skill UI")]
-        [SerializeField] private Image[] SkillBorder;
-        [SerializeField] private SkillType skillType = SkillType.NONE;
+        public SkillObject skill;
+        public Image[] SkillBorder;
+        [SerializeField] private Button button;
+        [SerializeField] private Image skillImage;
+
+        public bool isUnlocked;
+        public bool isCategory;
+
+        [SerializeField]
+        private SkillType skillType;
+        public SkillType SkillType
+        { 
+            get 
+            { 
+                return skillType;
+            }
+            set 
+            {
+                skillType = value;
+                SetBorderColor(skillType);
+            }
+        }
+
         private Color BorderColor;
 
-
         [Header("Upgrade UI")]
-        [Range(0,3)]
+        [Range(0, 3)]
         [SerializeField]
         private int upgradeCount;
+        public int UpgradeCount
+        {
+            get 
+            { 
+                return upgradeCount;
+            }
+            set 
+            { 
+                upgradeCount = value;
+                SetUpgradeCount(upgradeCount);
+            }
+        }
       
         [SerializeField]
         private List<GameObject> Upgrades = new List<GameObject>();
+
+
+        //*******************************************************************************
+
+        private void Start()
+        {
+            SetBorderColor(skillType);
+        }
+
 
         //*******************************************************************************
 
@@ -37,14 +79,14 @@ namespace NovaSkillTree
         }
 
         public void DisableUpgradeUI()
-        {
+       {
             for (int i = 0; i < Upgrades.Count; i++)
             {
                 Upgrades[i].SetActive(false);
             }
-        }
+       }
 
-        void SetBorderColor(SkillType type)
+        public void SetBorderColor(SkillType type)
         {
             switch(type)
             {
@@ -77,11 +119,32 @@ namespace NovaSkillTree
 
         //*******************************************************************************
 
+        public void CheckLockedState()
+        {
+          button.interactable = isUnlocked;
+
+            if (isUnlocked && !isCategory)
+            {
+                gameObject.GetComponent<EventTrigger>().enabled = false;
+            }
+            else
+            {
+                GetComponent<ShowCategoryData>().Count = skill.pointsToUnlock;
+            }
+
+        }
+
+        //*******************************************************************************
 
         void Update()
         {
-           SetUpgradeCount(upgradeCount);
-           SetBorderColor(skillType);
+            if (skill)
+            {
+                this.UpgradeCount = skill.UpgradesAllowed;
+                this.SkillType = skill.skillType;
+                this.skillImage.sprite = skill.Icon;
+                CheckLockedState();
+            }
         }
 
         
