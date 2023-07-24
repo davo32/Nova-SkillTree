@@ -145,6 +145,11 @@ namespace NovaSkillTree
                 this.skillImage.sprite = skill.Icon;
                 CheckLockedState();
             }
+            else
+            {
+                this.SkillType = skill.skillType;
+                CheckLockedState();
+            }
         }
 
         
